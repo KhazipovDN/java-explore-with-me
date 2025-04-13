@@ -1,14 +1,34 @@
+version: '3.1'
+
 services:
   stats-server:
+    build:
+      context: ./statistics/statistics-server
+    image: stats-server-image
+    container_name: stats-server-container
     ports:
       - "9090:9090"
+    depends_on:
+      - stats-db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://stats-db:5432/stats
+      - SPRING_DATASOURCE_USERNAME=khazip
+      - SPRING_DATASOURCE_PASSWORD=12345
+    networks:
+      - stats-network
 
   stats-db:
     image: postgres:16.1
-
-  ewm-service:
+    container_name: stats-db-container
     ports:
-      - "8080:8080"
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=stats
+      - POSTGRES_USER=khazip
+      - POSTGRES_PASSWORD=12345
+    networks:
+      - stats-network
 
-  ewm-db:
-    image: postgres:16.1
+networks:
+  stats-network:
+    driver: bridge
