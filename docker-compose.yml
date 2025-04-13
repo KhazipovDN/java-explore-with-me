@@ -19,14 +19,13 @@ services:
     image: postgres:16.1
     container_name: stats-db-container
     ports:
-      - "5432:5432"
+      - "6541:5432"
     environment:
       - POSTGRES_DB=stats
       - POSTGRES_USER=khazip
       - POSTGRES_PASSWORD=12345
     networks:
       - stats-network
-
 
   ewm-service:
     build: ./main
