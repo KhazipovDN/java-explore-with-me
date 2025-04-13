@@ -14,8 +14,7 @@
 	<modules>
 		<module>main</module>
 		<module>statistics</module>
-		<module>statistics/statistics-client</module>
-		<module>statistics/statistics-server</module>
+
 	</modules>
 
 	<groupId>ru.practicum</groupId>
