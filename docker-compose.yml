@@ -31,9 +31,5 @@ services:
     ports:
       - "9090:9090"
 
-networks:
-  default:
-    driver: bridge
-
 volumes:
   stats-db-data:
