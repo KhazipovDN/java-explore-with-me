@@ -1,3 +1,5 @@
+version: '3.9'
+
 services:
   stats-db:
     image: postgres:16.1
@@ -8,6 +10,11 @@ services:
       - POSTGRES_PASSWORD=12345
     volumes:
       - stats-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U khazip"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   stats-server:
     build:
@@ -20,7 +27,9 @@ services:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://stats-db:5432/stats
       - SPRING_DATASOURCE_USERNAME=khazip
       - SPRING_DATASOURCE_PASSWORD=12345
-      - SPRING_LIQUIBASE_ENABLED=false # Отключаем Liquibase для теста
+      - SPRING_LIQUIBASE_ENABLED=false
+    ports:
+      - "8080:8080"
 
 networks:
   default:
