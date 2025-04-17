@@ -53,7 +53,6 @@ services:
       - ewm-db
       - stats-server
 
-
   ewm-db:
     image: postgres:16.1
     container_name: postgres-ewm-main-db
@@ -69,5 +68,6 @@ services:
       interval: 5s
       retries: 10
 
-volumes:
-  stats-db-data:
+networks:
+  stats-network:
+    driver: bridge
