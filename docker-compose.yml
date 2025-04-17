@@ -71,3 +71,4 @@ services:
 networks:
   stats-network:
     driver: bridge
+
