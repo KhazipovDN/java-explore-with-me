@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import ru.practicum.ewm.stats.server.service.StatsService;
+import ru.practicum.ewm.stats.server.service.StatsticsService;
 import ru.practicum.ewm.stats.dto.EndpointHitDTO;
 import ru.practicum.ewm.stats.dto.ViewStatsDTO;
 
@@ -17,7 +17,7 @@ import java.util.List;
 @RequestMapping
 public class StatsController {
 
-    private final StatsService service;
+    private final StatsticsService service;
 
     @PostMapping("/hit")
     @ResponseStatus(HttpStatus.CREATED)

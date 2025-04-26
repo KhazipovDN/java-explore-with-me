@@ -13,7 +13,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class StatsService {
+public class StatsticsService {
 
     private final StatsRepository repository;
     private final StatsMapper mapper;

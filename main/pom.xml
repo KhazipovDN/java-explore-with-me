@@ -25,11 +25,6 @@
         </dependency>
         <dependency>
             <groupId>ru.practicum</groupId>
-            <artifactId>statistics-client</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>ru.practicum</groupId>
             <artifactId>statistics-dto</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
@@ -79,17 +74,6 @@
             <artifactId>statistics-client</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>ru.practicum</groupId>
-            <artifactId>statistics-client</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>ru.practicum</groupId>
-            <artifactId>statistics</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
     </dependencies>
