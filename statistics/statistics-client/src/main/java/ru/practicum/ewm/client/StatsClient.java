@@ -39,6 +39,7 @@ public class StatsClient {
         }
     }
 
+
     public ResponseEntity<Object> getStats(LocalDateTime start, LocalDateTime end, List<String> uris, Boolean unique) {
         StringBuilder url = new StringBuilder(serverUrl + "/stats?");
         url.append("start=").append(start.format(formatter));
