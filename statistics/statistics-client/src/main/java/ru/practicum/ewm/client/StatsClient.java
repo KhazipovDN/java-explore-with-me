@@ -28,6 +28,7 @@ public class StatsClient {
         rest.setRequestFactory(requestFactory);
     }
 
+
     public ResponseEntity<Object> saveHit(EndpointHitDTO hit) {
         ResponseEntity<Object> response;
         try {
@@ -41,6 +42,7 @@ public class StatsClient {
         }
         return responseBuilder.build();
     }
+
 
     public ResponseEntity<Object> getStats(LocalDateTime start, LocalDateTime end, List<String> uris, Boolean unique) {
         StringBuilder url = new StringBuilder(serverUrl + "/stats?");
