@@ -10,7 +10,7 @@ import ru.practicum.ewm.stats.dto.ViewStatsDTO;
 import ru.practicum.ewm.stats.server.model.EndpointHit;
 
 @Repository
-public interface StatsRepository extends CrudRepository<EndpointHit, Long> {
+public interface StatRepository extends CrudRepository<EndpointHit, Long> {
 
     @Query("SELECT new ru.practicum.ewm.stats.dto.ViewStatsDTO(e.app, e.uri, COUNT(e)) " +
             "FROM EndpointHit e " +
